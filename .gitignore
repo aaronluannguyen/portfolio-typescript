@@ -1,4 +1,8 @@
-.idea
 .DS_Store
-node_modules
-
+.vscode
+**tls/
+npm-debug.log
+.idea
+coverage.out
+node_modules/
+build/

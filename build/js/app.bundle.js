@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "fcf4097762d8d42f9eae";
+/******/ 	var hotCurrentHash = "2c3136858818b126491d";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -25197,6 +25197,9 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var Hello_1 = __webpack_require__(/*! ./components/Hello */ "./src/app/components/Hello.tsx");
 ReactDOM.render(React.createElement(Hello_1.Hello, { compiler: "Typescript", framework: "React", bundler: "Webpack" }), document.getElementById('root'));
+if (true) {
+    module.hot.accept();
+}
 
 
 /***/ }),
