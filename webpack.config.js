@@ -1,4 +1,3 @@
-
 const path = require('path'),
   webpack = require('webpack'),
   HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -14,7 +13,7 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },
   mode: 'development',
   module: {
@@ -23,11 +22,29 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         loader: 'ts-loader'
       },
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+      {
+        test: /\.css$/,
+        include: path.join(__dirname, 'src'),
+        use: [
+          'style-loader',
+          {
+            loader: 'typings-for-css-modules-loader',
+            options: {
+              modules: true,
+              namedExport: true,
+              camelCase: true
+            },
+          }
+        ]
+      }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'app', 'index.html') }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.WatchIgnorePlugin([
+      /css\.d\.ts$/
+    ])
   ]
 };

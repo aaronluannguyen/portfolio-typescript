@@ -3,6 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "module": "commonjs",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "outDir": "./build/",
     "preserveConstEnums": true,
@@ -11,6 +12,7 @@
     "target": "es5"
   },
   "include": [
-    "./src/**/**/*"
+    "./src/**/**/*",
+    "./src/custom-typing.d.ts"
   ]
 }

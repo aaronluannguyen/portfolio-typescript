@@ -1,9 +1,24 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-declare let module: any
-import { Hello } from './components/Hello';
+import * as styles from './App.css';
+import {Navbar} from './Navbar/Navbar';
+
+declare let module: any;
+
+
+interface IProps {}
+class App extends React.Component<IProps, {}> {
+  render() {
+    return <div className={""}>
+
+      <Navbar/>
+    </div>
+  }
+}
+
+
 ReactDOM.render(
-  <Hello compiler="Typescript" framework="React" bundler="Webpack" />,
+  <App/>,
   document.getElementById('root')
 );
 
